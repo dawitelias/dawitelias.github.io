@@ -70,11 +70,12 @@ p {
 	@include subtitle1;
   color: $color--text-primary;
   margin: 0 0 32px;
+}
 
-  a {
-		color: #FFF;
-		font-weight: 500;
-	}
+p a,
+ul li:not(.list-item) a {
+	color: #FFF;
+	font-weight: 500;
 }
 
 strong { font-weight: bold; }
@@ -401,7 +402,9 @@ footer {
 
     &.home { height: 100%; }
     
-    &.projects { 
+	&.projects,
+	&.about,
+	&.about + footer { 
       max-width: 764px;
       margin: auto;
 		}
@@ -411,7 +414,12 @@ footer {
 	&.about .header.desktop { display: block; }
 	&.about .container__back { padding-top: 0; }
     
-    &.home p { margin-bottom: 0; }
+	&.home p { margin-bottom: 0; }
+	
+	&.about .container__image img {
+		border: 2px solid $color--text-primary;
+		border-radius: 6px;
+	}
   }
 	
   p { @include body1; }
