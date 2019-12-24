@@ -28,6 +28,12 @@ body {
 
 .site-content {
 	padding-top: 64px; 
+
+	-webkit-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Firefox < 16 */
+        -ms-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Internet Explorer */
+         -o-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Opera < 12.1 */
+            animation: fadein .6s cubic-bezier(.4, 0, .2, 1);
 	
 	&.about { padding-top: 0; }
 	&.about .container__back { padding-top: 64px; }
@@ -47,7 +53,6 @@ body {
 		.container__image.m32 { margin-bottom: 32px; }
 	} // projects
 }
-
 
 h1 {
 	@include headline4;
@@ -70,11 +75,12 @@ p {
 	@include subtitle1;
   color: $color--text-primary;
   margin: 0 0 32px;
+}
 
-  a {
-		color: #FFF;
-		font-weight: 500;
-	}
+p a,
+ul li:not(.list-item) a {
+	color: #FFF;
+	font-weight: 500;
 }
 
 strong { font-weight: bold; }
@@ -366,6 +372,71 @@ footer {
 	}
 }
 
+@keyframes fadein {
+    from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+    to   { 
+		opacity: 1;
+		transform: translateZ(0);
+		transform: initial;
+	}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+    to   { 
+		opacity: 1;
+		transform: translateZ(0);
+		transform: initial;
+	}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+    to   { 
+		opacity: 1;
+		transform: translateZ(0);
+		transform: initial;
+	}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+    to   { 
+		opacity: 1;
+		transform: translateZ(0);
+		transform: initial;
+	}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+    to   { 
+		opacity: 1;
+		transform: translateZ(0);
+		transform: initial;
+	}
+}
+
+
 // *************************** Media Queries
 
 @media #{$tablet} {
@@ -399,19 +470,26 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
 
-    &.home { height: 100%; }
+	&.home { height: 100%; }
     
-    &.projects { 
+	&.projects,
+	&.about,
+	&.about + footer { 
       max-width: 764px;
       margin: auto;
-		}
+	}
 
-    &.about { height: calc(100vh - 72px); }
+    // &.about { height: calc(100vh - 72px); }
     &.about .header.mobile { display: none; }
 	&.about .header.desktop { display: block; }
 	&.about .container__back { padding-top: 0; }
     
-    &.home p { margin-bottom: 0; }
+	&.home p { margin-bottom: 0; }
+	
+	&.about .container__image img {
+		border: 2px solid $color--text-primary;
+		border-radius: 6px;
+	}
   }
 	
   p { @include body1; }
@@ -420,9 +498,9 @@ footer {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-  	-webkit-box-pack: justify;
-  	    -ms-flex-pack: justify;
-  	        justify-content: space-between;
+  		-webkit-box-pack: justify;
+  	       -ms-flex-pack: justify;
+  	    justify-content: space-between;
 	}
 	
 	.flex__column {
