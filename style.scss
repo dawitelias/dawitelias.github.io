@@ -83,6 +83,9 @@ ul li:not(.list-item) a {
 	font-weight: 500;
 }
 
+a, .list-item { transition: transform cubic-bezier(.4, 0, .2, 1) .2s; }
+a:active, .list-item:active { transform: scale(.965, .965); }
+
 strong { font-weight: bold; }
 
 section { margin-bottom: 64px; }
@@ -470,7 +473,8 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
 
-	&.home { height: 100%; }
+	// &.home { height: 100%; }
+	&.home { padding-top: 152px; }
     
 	&.projects,
 	&.about,
