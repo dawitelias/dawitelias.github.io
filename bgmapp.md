@@ -14,7 +14,7 @@ permalink: /bgmapp
 
 <h1 class="bgmapp">
     BGMAPP, Mapping Lost History
-    <span class="header-description">Designer, iOS and Android  •  2019 – Present</span>
+    <span class="header-description">Designer, iOS and Android&nbsp;&nbsp;•&nbsp;&nbsp;2019 – Present</span>
 </h1>
 
 <section>

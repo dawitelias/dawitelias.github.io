@@ -14,7 +14,7 @@ permalink: /explorer
 
 <h1 class="explorer">
     Explorer for ArcGIS
-    <span class="header-description">Android app</span>
+    <span class="header-description">Designer, Android&nbsp;&nbsp;•&nbsp;&nbsp;2016 – 2018</span>
 </h1>
 
 <section>

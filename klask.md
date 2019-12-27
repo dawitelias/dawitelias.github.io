@@ -14,7 +14,7 @@ permalink: /klask
 
 <h1 class="klask">
     Klask Standings
-    <span class="header-description">Progressive web app</span>
+    <span class="header-description">Designer and front end developer&nbsp;&nbsp;•&nbsp;&nbsp;2018</span>
 </h1>
 
 <section>
