@@ -132,11 +132,13 @@ hr {
 	@include caption;
 	font-style: italic;
 	margin-top: 16px;
+	text-align: center;
 }
 
 .workforce { color: $color--workforce; }
 .tracker { color: $color--tracker; }
 .explorer { color: $color--explorer; }
+.bgmapp { color: $color--bgmapp; }
 .klask { color: $color--klask; }
 .talk1 { color: $color--yellow; }
 

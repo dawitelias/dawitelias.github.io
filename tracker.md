@@ -14,7 +14,7 @@ permalink: /tracker
 
 <h1 class="tracker">
     Tracker for ArcGIS
-    <span class="header-description">Android app</span>
+    <span class="header-description">Designer, Android&nbsp;&nbsp;•&nbsp;&nbsp;2018 – Present</span>
 </h1>
 
 <section>
