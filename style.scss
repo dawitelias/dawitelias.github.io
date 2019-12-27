@@ -18,10 +18,10 @@ html,
 body { height: 100%; }
 
 body {
-  @include typography-base;
-  background-color: #000;
-	background-image: url(../images/bg.svg);
-	color: $color--text-primary;
+	@include typography-base;
+	background-color: $color--background;
+	// background-image: url(../images/bg.svg);
+	color: $color--high-emphasis;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -43,7 +43,7 @@ body {
 
 		.header-description {
 			@include body2;
-			color: $color--text-secondary;
+			color: $color--medium-emphasis;
 			display: block;
 			margin-top: 8px;
 		}
@@ -73,36 +73,39 @@ ul {
 
 p {
 	@include subtitle1;
-  color: $color--text-primary;
+  color: $color--high-emphasis;
   margin: 0 0 32px;
 }
 
 p a,
 ul li:not(.list-item) a {
-	color: #FFF;
+	color: $color--white;
 	font-weight: 500;
 }
+
+a, .list-item { transition: transform cubic-bezier(.4, 0, .2, 1) .2s; }
+a:active, .list-item:active { transform: scale(.965, .965); }
 
 strong { font-weight: bold; }
 
 section { margin-bottom: 64px; }
 
 hr {
-	border: 0.5px solid $color--divider;
+	border: 0.5px solid $color--low-emphasis;
 	margin: 64px 0;
 }
 
 .subtitle {
 	@include body2;
-	color: $color--text-secondary;
+	color: $color--medium-emphasis;
 	
 	a { text-decoration: none; }
 }
 
 .overline {
 	@include overline;
-	border-bottom: 1px solid $color--divider;
-	color: $color--text-secondary;
+	border-bottom: 1px solid $color--low-emphasis;
+	color: $color--medium-emphasis;
 	display: block;
 	margin-bottom: 32px;
 	padding-bottom: 8px;
@@ -149,7 +152,7 @@ hr {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		color: $color--text-secondary;
+		color: $color--medium-emphasis;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -162,22 +165,22 @@ hr {
 		&:hover {
 			&::before {
 				content: ' ';
-				background-color: rgba(255,255,255,.08);
+				background-color: $color--surface;
 				border-radius: 6px;
-				height: 110%;
+				height: 125%;
 				left: 50%;
 				position: absolute;
 				top: 50%;
 				-webkit-transform: translate(-50%, -50%);
 				        transform: translate(-50%, -50%);
-				width: 110%;
+				width: 125%;
 				z-index: -1;
 			}
 		}
 	}
 
 	svg {
-		fill: $color--text-secondary;
+		fill: $color--medium-emphasis;
 		margin-right: 8px; 
 	}
 }
@@ -202,7 +205,7 @@ hr {
 		
 		.title,
 		.subtitle {
-			background-color: #FFF;
+			background-color: $color--white;
 			color: $color--text-on-base;
 			margin: 0;
 			padding: 0 8px;
@@ -258,9 +261,9 @@ hr {
 	&:hover {
 		&::before {
 			content: ' ';
-			background-color: rgba(255,255,255,.08);
+			background-color: $color--surface;
 			border-radius: 6px;
-			height: 105%;
+			height: 110%;
 			left: 50%;
 			position: absolute;
 			top: 50%;
@@ -286,7 +289,7 @@ hr {
 
 	i {
 		@include caption;
-		color: $color--text-secondary;
+		color: $color--medium-emphasis;
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -346,7 +349,7 @@ footer {
 	    -ms-flex-align: center;
 	        align-items: center;
 	border-radius: 32px;
-	color: $color--text-primary;
+	color: $color--high-emphasis;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -358,7 +361,7 @@ footer {
 	white-space: nowrap;
 
 	&.read-more {
-		border: 1px solid $color--text-primary;
+		border: 1px solid $color--high-emphasis;
 
 		svg {
 			margin-right: 8px;
@@ -368,7 +371,7 @@ footer {
 	}
 
 	&:hover {
-		background-color: rgba(255,255,255,.08);
+		background-color: $color--surface;
 	}
 }
 
@@ -470,7 +473,8 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
 
-	&.home { height: 100%; }
+	// &.home { height: 100%; }
+	&.home { padding-top: 152px; }
     
 	&.projects,
 	&.about,
@@ -487,7 +491,7 @@ footer {
 	&.home p { margin-bottom: 0; }
 	
 	&.about .container__image img {
-		border: 2px solid $color--text-primary;
+		border: 2px solid $color--high-emphasis;
 		border-radius: 6px;
 	}
   }
