@@ -93,7 +93,7 @@ Explorer 18.1 for Android shipped May 10th, 2018. We have a lot of work to do to
 
 <div class="container__adjacent-links">
     <a class="chip read-more" target="_blank" href="https://www.esri.com/arcgis-blog/products/explorer/field-mobility/whats-new-in-explorer-for-arcgis-may-2018/">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.25 14.25H3.75V3.75H9V2.25H3.75C2.9175 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.9175 15.75 3.75 15.75H14.25C15.075 15.75 15.75 15.075 15.75 14.25V9H14.25V14.25ZM10.5 2.25V3.75H13.1925L5.82 11.1225L6.8775 12.18L14.25 4.8075V7.5H15.75V2.25H10.5Z" fill="#85CA85"/></svg> Read more about the latest release
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill-explorer" d="M14.25 14.25H3.75V3.75H9V2.25H3.75C2.9175 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.9175 15.75 3.75 15.75H14.25C15.075 15.75 15.75 15.075 15.75 14.25V9H14.25V14.25ZM10.5 2.25V3.75H13.1925L5.82 11.1225L6.8775 12.18L14.25 4.8075V7.5H15.75V2.25H10.5Z"/></svg> Read more about the latest release
     </a>
     <a class="badge" target="_blank" href="https://play.google.com/store/apps/details?id=com.esri.explorer"><img src="/images/google-play-badge.svg" alt="Google Play Badge"></a>
     <a class="badge" target="_blank" href="https://itunes.apple.com/us/app/explorer-for-arcgis/id860708788"><img src="/images/apple-app-store-badge.svg" alt="Apple App Store Badge"></a>

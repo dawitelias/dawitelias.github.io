@@ -20,15 +20,15 @@ body { height: 100%; }
 
 body {
 	@include typography-base;
-	background-color: $color--background;
+	background-color: var(--color--background);
 	// background-image: url(../images/bg.svg);
-	color: $color--high-emphasis;
+	color: var(--color--high-emphasis);
 	margin: 0 auto;
 	padding: 0;
 }
 
 .site-content {
-	padding-top: 64px; 
+	padding: 64px 0; 
 
 	-webkit-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Firefox < 16 */
@@ -44,7 +44,7 @@ body {
 
 		.header-description {
 			@include body2;
-			color: $color--medium-emphasis;
+			color: var(--color--medium-emphasis);
 			display: block;
 			margin-top: 8px;
 		}
@@ -74,13 +74,13 @@ ul {
 
 p {
 	@include subtitle1;
-  color: $color--high-emphasis;
+  color: var(--color--high-emphasis);
   margin: 0 0 32px;
 }
 
 p a,
 ul li:not(.list-item) a {
-	color: $color--white;
+	color: var(--color--high-emphasis);
 	font-weight: 500;
 }
 
@@ -92,21 +92,21 @@ strong { font-weight: bold; }
 section { margin-bottom: 64px; }
 
 hr {
-	border: 0.5px solid $color--low-emphasis;
+	border: 0.5px solid var(--color--separator);
 	margin: 64px 0;
 }
 
 .subtitle {
 	@include body2;
-	color: $color--medium-emphasis;
+	color: var(--color--medium-emphasis);
 	
 	a { text-decoration: none; }
 }
 
 .overline {
 	@include overline;
-	border-bottom: 1px solid $color--low-emphasis;
-	color: $color--medium-emphasis;
+	border-bottom: 1px solid var(--color--separator);
+	color: var(--color--medium-emphasis);
 	display: block;
 	margin-bottom: 32px;
 	padding-bottom: 8px;
@@ -136,13 +136,6 @@ hr {
 	text-align: center;
 }
 
-.workforce { color: $color--workforce; }
-.tracker { color: $color--tracker; }
-.explorer { color: $color--explorer; }
-.bgmapp { color: $color--bgmapp; }
-.klask { color: $color--klask; }
-.talk1 { color: $color--yellow; }
-
 .container { padding: 0 16px; }
 
 .container__projects { margin-bottom: 64px; }
@@ -155,7 +148,7 @@ hr {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		color: $color--medium-emphasis;
+		color: var(--color--medium-emphasis);
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -168,7 +161,7 @@ hr {
 		&:hover {
 			&::before {
 				content: ' ';
-				background-color: $color--surface;
+				background-color: var(--color--surface);
 				border-radius: 6px;
 				height: 125%;
 				left: 50%;
@@ -183,7 +176,7 @@ hr {
 	}
 
 	svg {
-		fill: $color--medium-emphasis;
+		fill: var(--color--medium-emphasis);
 		margin-right: 8px; 
 	}
 }
@@ -208,8 +201,8 @@ hr {
 		
 		.title,
 		.subtitle {
-			background-color: $color--white;
-			color: $color--text-on-base;
+			background-color: var(--color--white);
+			color: var(--color--text-on-base);
 			margin: 0;
 			padding: 0 8px;
 		}	
@@ -264,7 +257,7 @@ hr {
 	&:hover {
 		&::before {
 			content: ' ';
-			background-color: $color--surface;
+			background-color: var(--color--surface);
 			border-radius: 6px;
 			height: 110%;
 			left: 50%;
@@ -292,7 +285,7 @@ hr {
 
 	i {
 		@include caption;
-		color: $color--medium-emphasis;
+		color: var(--color--medium-emphasis);
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -338,6 +331,10 @@ footer {
 				height: 24px;
 				width: 24px;
 			}
+
+			a svg path { fill: var(--color--low-emphasis); }
+
+			a:hover svg path { fill: var(--color--high-emphasis); }
 		}
 	}
 
@@ -352,7 +349,7 @@ footer {
 
 	.snackbar {
 		@include body2;
-		background-color: $color--surface;
+		background-color: var(--color--surface);
 		border-radius: 6px;
 		bottom: 150%;
 		display: none;
@@ -378,7 +375,7 @@ footer {
 	    -ms-flex-align: center;
 	        align-items: center;
 	border-radius: 32px;
-	color: $color--high-emphasis;
+	color: var(--color--high-emphasis);
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -390,7 +387,7 @@ footer {
 	white-space: nowrap;
 
 	&.read-more {
-		border: 1px solid $color--high-emphasis;
+		border: 1px solid var(--color--low-emphasis);
 
 		svg {
 			margin-right: 8px;
@@ -400,7 +397,7 @@ footer {
 	}
 
 	&:hover {
-		background-color: $color--surface;
+		background-color: var(--color--surface);
 	}
 }
 
@@ -455,7 +452,7 @@ footer {
 	&.home p { margin-bottom: 0; }
 	
 	&.about .container__image img {
-		border: 2px solid $color--high-emphasis;
+		border: 2px solid var(--color--high-emphasis);
 		border-radius: 6px;
 	}
   }
