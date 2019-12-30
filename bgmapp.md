@@ -20,7 +20,7 @@ permalink: /bgmapp
 <section>
     <p>Black Girls Mapping with Action to Pioneer Progress is a community-focused group to connect and empower women of color (and other underrepresented groups) in the field of GIS, and enables the community to solve problems through GIS-related projects. The organization was founded and is led by my colleague, <a target="_blank" href="https://www.linkedin.com/in/whitney-kotlewski-coleman-3074b876/">Whitney Kotlewski</a>.</p>
     <a class="chip read-more" target="_blank" href="https://bgmapp.org/">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.25 14.25H3.75V3.75H9V2.25H3.75C2.9175 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.9175 15.75 3.75 15.75H14.25C15.075 15.75 15.75 15.075 15.75 14.25V9H14.25V14.25ZM10.5 2.25V3.75H13.1925L5.82 11.1225L6.8775 12.18L14.25 4.8075V7.5H15.75V2.25H10.5Z" fill="#77ECDA"/></svg> Read more about BGMAPP
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill-bgmapp" d="M14.25 14.25H3.75V3.75H9V2.25H3.75C2.9175 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.9175 15.75 3.75 15.75H14.25C15.075 15.75 15.75 15.075 15.75 14.25V9H14.25V14.25ZM10.5 2.25V3.75H13.1925L5.82 11.1225L6.8775 12.18L14.25 4.8075V7.5H15.75V2.25H10.5Z"/></svg> Read more about BGMAPP
     </a>
 </section>
 

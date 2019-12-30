@@ -9,6 +9,7 @@
 @import "typography";
 @import "colors";
 @import "variables";
+@import "anims";
 
 /**************/
 /* BASE RULES */
@@ -19,15 +20,15 @@ body { height: 100%; }
 
 body {
 	@include typography-base;
-	background-color: $color--background;
+	background-color: var(--color--background);
 	// background-image: url(../images/bg.svg);
-	color: $color--high-emphasis;
+	color: var(--color--high-emphasis);
 	margin: 0 auto;
 	padding: 0;
 }
 
 .site-content {
-	padding-top: 64px; 
+	padding: 64px 0; 
 
 	-webkit-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein .6s cubic-bezier(.4, 0, .2, 1); /* Firefox < 16 */
@@ -43,7 +44,7 @@ body {
 
 		.header-description {
 			@include body2;
-			color: $color--medium-emphasis;
+			color: var(--color--medium-emphasis);
 			display: block;
 			margin-top: 8px;
 		}
@@ -73,13 +74,13 @@ ul {
 
 p {
 	@include subtitle1;
-  color: $color--high-emphasis;
+  color: var(--color--high-emphasis);
   margin: 0 0 32px;
 }
 
 p a,
 ul li:not(.list-item) a {
-	color: $color--white;
+	color: var(--color--high-emphasis);
 	font-weight: 500;
 }
 
@@ -91,21 +92,21 @@ strong { font-weight: bold; }
 section { margin-bottom: 64px; }
 
 hr {
-	border: 0.5px solid $color--low-emphasis;
+	border: 0.5px solid var(--color--separator);
 	margin: 64px 0;
 }
 
 .subtitle {
 	@include body2;
-	color: $color--medium-emphasis;
+	color: var(--color--medium-emphasis);
 	
 	a { text-decoration: none; }
 }
 
 .overline {
 	@include overline;
-	border-bottom: 1px solid $color--low-emphasis;
-	color: $color--medium-emphasis;
+	border-bottom: 1px solid var(--color--separator);
+	color: var(--color--medium-emphasis);
 	display: block;
 	margin-bottom: 32px;
 	padding-bottom: 8px;
@@ -135,13 +136,6 @@ hr {
 	text-align: center;
 }
 
-.workforce { color: $color--workforce; }
-.tracker { color: $color--tracker; }
-.explorer { color: $color--explorer; }
-.bgmapp { color: $color--bgmapp; }
-.klask { color: $color--klask; }
-.talk1 { color: $color--yellow; }
-
 .container { padding: 0 16px; }
 
 .container__projects { margin-bottom: 64px; }
@@ -154,7 +148,7 @@ hr {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		color: $color--medium-emphasis;
+		color: var(--color--medium-emphasis);
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -167,7 +161,7 @@ hr {
 		&:hover {
 			&::before {
 				content: ' ';
-				background-color: $color--surface;
+				background-color: var(--color--surface);
 				border-radius: 6px;
 				height: 125%;
 				left: 50%;
@@ -182,7 +176,7 @@ hr {
 	}
 
 	svg {
-		fill: $color--medium-emphasis;
+		fill: var(--color--medium-emphasis);
 		margin-right: 8px; 
 	}
 }
@@ -207,8 +201,8 @@ hr {
 		
 		.title,
 		.subtitle {
-			background-color: $color--white;
-			color: $color--text-on-base;
+			background-color: var(--color--white);
+			color: var(--color--text-on-base);
 			margin: 0;
 			padding: 0 8px;
 		}	
@@ -263,7 +257,7 @@ hr {
 	&:hover {
 		&::before {
 			content: ' ';
-			background-color: $color--surface;
+			background-color: var(--color--surface);
 			border-radius: 6px;
 			height: 110%;
 			left: 50%;
@@ -291,7 +285,7 @@ hr {
 
 	i {
 		@include caption;
-		color: $color--medium-emphasis;
+		color: var(--color--medium-emphasis);
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -322,28 +316,58 @@ hr {
 }
 
 footer {
-  margin: 48px 0;
+	margin: 48px 0;
   
-  ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+	ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 
-    li {
-      margin-right: 16px;
+		li {
+			margin-right: 16px;
 
-      a { 
-        display: block;
-        height: 24px;
-        width: 24px;
-      }
-    }
-  }
+			a { 
+				display: block;
+				height: 24px;
+				width: 24px;
+			}
 
-  .logo__twitter { background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxyZWN0IHdpZHRoPSIy%0D%0ANCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMCIvPgo8cGF0aCBkPSJN%0D%0AMSAxOC45QzIuOTQgMjAuMTMgNS4xNyAyMS4xMiA4LjI1IDIwLjk5QzE1LjcxIDIwLjY1IDIwLjcx%0D%0AIDE1LjMgMjAuODIgNy40ODAwNUMyMS42MiA2LjgwMDA1IDIyLjU3IDYuMDAwMDUgMjMgNS4xMDAw%0D%0ANUMyMi4zMSA1LjQ1MDA1IDIxLjQ5IDUuNjcwMDUgMjAuNTcgNS44MDAwNUMyMS40MSA1LjE4MDA1%0D%0AIDIyLjEgNC40MjAwNSAyMi40NiAzLjMxMDA1QzIxLjU5IDMuNzcwMDUgMjAuNjkgNC4xOTAwNSAx%0D%0AOS41OCA0LjQwMDA1QzE2Ljk2IDEuMjIwMDUgMTAuNjggMy43OTAwNSAxMS43OCA4LjUyMDA1Qzcu%0D%0AMzcgOC4yNTAwNSA0LjY4IDYuMjUwMDUgMi40NCAzLjgwMDA1QzEuMTYgNS44NzAwNSAyLjI3IDku%0D%0AMDAwMDUgMy43OCA5Ljg2MDA1QzMgOS44MjAwNSAyLjQxIDkuNTgwMDUgMS44NSA5LjMyMDA1QzEu%0D%0AOTMgMTEuOTIgMy4zNiAxMy4xNyA1LjM3IDEzLjg0QzQuNzYgMTMuOTcgNC4wOCAxNCAzLjQzIDEz%0D%0ALjg5QzQuMDUgMTUuNzEgNS4zNyAxNi44NSA3LjYgMTcuMDdDNi4wOSAxOC4zNiAzLjI3IDE5LjI3%0D%0AIDEgMTguOVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4K); }
-  .logo__linkedin { background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxwYXRoIGZpbGwtcnVs%0D%0AZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMjFIMTcuNjIzOVYxNC42NzIz%0D%0AQzE3LjYyMzkgMTMuMDE2IDE2LjkzOTQgMTEuODg1MyAxNS40MzQxIDExLjg4NTNDMTQuMjgyOCAx%0D%0AMS44ODUzIDEzLjY0MjUgMTIuNjQ4MyAxMy4zNDQ0IDEzLjM4MzdDMTMuMjMyNyAxMy42NDc2IDEz%0D%0ALjI1MDEgMTQuMDE1MyAxMy4yNTAxIDE0LjM4M1YyMUg4LjkxNDgyQzguOTE0ODIgMjEgOC45NzA3%0D%0AIDkuNzkxMDcgOC45MTQ4MiA4Ljc3MjE4SDEzLjI1MDFWMTAuNjkxMkMxMy41MDYzIDkuODUyMTUg%0D%0AMTQuODkxNiA4LjY1NDYxIDE3LjEwMjMgOC42NTQ2MUMxOS44NDUxIDguNjU0NjEgMjIgMTAuNDEz%0D%0ANSAyMiAxNC4yMDA5VjIxWk00LjUzMDU5IDcuMjQyNjlINC41MDI2NkMzLjEwNTY3IDcuMjQyNjkg%0D%0AMi4xOTk5NSA2LjMwNzkzIDIuMTk5OTUgNS4xMjMwN0MyLjE5OTk1IDMuOTE1MTUgMy4xMzI0NCAz%0D%0AIDQuNTU3MzcgM0M1Ljk4MTE0IDMgNi44NTY1OCAzLjkxMjg2IDYuODg0NTIgNS4xMTk2MkM2Ljg4%0D%0ANDUyIDYuMzA0NDggNS45ODExMyA3LjI0MjY5IDQuNTMwNTkgNy4yNDI2OVpNMi42OTkzNiA4Ljc3%0D%0AMjE4SDYuNTU4NTZWMjFIMi42OTkzNlY4Ljc3MjE4WiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0%0D%0AeT0iMC42Ii8+Cjwvc3ZnPgo=); }
-  .logo__email { background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxwYXRoIGQ9Ik0yMCA0%0D%0ASDRDMi45IDQgMi4wMSA0LjkgMi4wMSA2TDIgMThDMiAxOS4xIDIuOSAyMCA0IDIwSDIwQzIxLjEg%0D%0AMjAgMjIgMTkuMSAyMiAxOFY2QzIyIDQuOSAyMS4xIDQgMjAgNFpNMjAgOEwxMiAxM0w0IDhWNkwx%0D%0AMiAxMUwyMCA2VjhaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjYiLz4KPC9zdmc+Cg==); }
-}
+			a svg path { fill: var(--color--low-emphasis); }
+
+			a:hover svg path { fill: var(--color--high-emphasis); }
+		}
+	}
+
+	.logo__twitter { background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxyZWN0IHdpZHRoPSIy%0D%0ANCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMCIvPgo8cGF0aCBkPSJN%0D%0AMSAxOC45QzIuOTQgMjAuMTMgNS4xNyAyMS4xMiA4LjI1IDIwLjk5QzE1LjcxIDIwLjY1IDIwLjcx%0D%0AIDE1LjMgMjAuODIgNy40ODAwNUMyMS42MiA2LjgwMDA1IDIyLjU3IDYuMDAwMDUgMjMgNS4xMDAw%0D%0ANUMyMi4zMSA1LjQ1MDA1IDIxLjQ5IDUuNjcwMDUgMjAuNTcgNS44MDAwNUMyMS40MSA1LjE4MDA1%0D%0AIDIyLjEgNC40MjAwNSAyMi40NiAzLjMxMDA1QzIxLjU5IDMuNzcwMDUgMjAuNjkgNC4xOTAwNSAx%0D%0AOS41OCA0LjQwMDA1QzE2Ljk2IDEuMjIwMDUgMTAuNjggMy43OTAwNSAxMS43OCA4LjUyMDA1Qzcu%0D%0AMzcgOC4yNTAwNSA0LjY4IDYuMjUwMDUgMi40NCAzLjgwMDA1QzEuMTYgNS44NzAwNSAyLjI3IDku%0D%0AMDAwMDUgMy43OCA5Ljg2MDA1QzMgOS44MjAwNSAyLjQxIDkuNTgwMDUgMS44NSA5LjMyMDA1QzEu%0D%0AOTMgMTEuOTIgMy4zNiAxMy4xNyA1LjM3IDEzLjg0QzQuNzYgMTMuOTcgNC4wOCAxNCAzLjQzIDEz%0D%0ALjg5QzQuMDUgMTUuNzEgNS4zNyAxNi44NSA3LjYgMTcuMDdDNi4wOSAxOC4zNiAzLjI3IDE5LjI3%0D%0AIDEgMTguOVoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4K); }
+  	.logo__linkedin { background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxwYXRoIGZpbGwtcnVs%0D%0AZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjIgMjFIMTcuNjIzOVYxNC42NzIz%0D%0AQzE3LjYyMzkgMTMuMDE2IDE2LjkzOTQgMTEuODg1MyAxNS40MzQxIDExLjg4NTNDMTQuMjgyOCAx%0D%0AMS44ODUzIDEzLjY0MjUgMTIuNjQ4MyAxMy4zNDQ0IDEzLjM4MzdDMTMuMjMyNyAxMy42NDc2IDEz%0D%0ALjI1MDEgMTQuMDE1MyAxMy4yNTAxIDE0LjM4M1YyMUg4LjkxNDgyQzguOTE0ODIgMjEgOC45NzA3%0D%0AIDkuNzkxMDcgOC45MTQ4MiA4Ljc3MjE4SDEzLjI1MDFWMTAuNjkxMkMxMy41MDYzIDkuODUyMTUg%0D%0AMTQuODkxNiA4LjY1NDYxIDE3LjEwMjMgOC42NTQ2MUMxOS44NDUxIDguNjU0NjEgMjIgMTAuNDEz%0D%0ANSAyMiAxNC4yMDA5VjIxWk00LjUzMDU5IDcuMjQyNjlINC41MDI2NkMzLjEwNTY3IDcuMjQyNjkg%0D%0AMi4xOTk5NSA2LjMwNzkzIDIuMTk5OTUgNS4xMjMwN0MyLjE5OTk1IDMuOTE1MTUgMy4xMzI0NCAz%0D%0AIDQuNTU3MzcgM0M1Ljk4MTE0IDMgNi44NTY1OCAzLjkxMjg2IDYuODg0NTIgNS4xMTk2MkM2Ljg4%0D%0ANDUyIDYuMzA0NDggNS45ODExMyA3LjI0MjY5IDQuNTMwNTkgNy4yNDI2OVpNMi42OTkzNiA4Ljc3%0D%0AMjE4SDYuNTU4NTZWMjFIMi42OTkzNlY4Ljc3MjE4WiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0%0D%0AeT0iMC42Ii8+Cjwvc3ZnPgo=); }
+  	.logo__email { 
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9u%0D%0AZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBo%0D%0AZWlnaHQ9IjI0IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwIi8+CjxwYXRoIGQ9Ik0yMCA0%0D%0ASDRDMi45IDQgMi4wMSA0LjkgMi4wMSA2TDIgMThDMiAxOS4xIDIuOSAyMCA0IDIwSDIwQzIxLjEg%0D%0AMjAgMjIgMTkuMSAyMiAxOFY2QzIyIDQuOSAyMS4xIDQgMjAgNFpNMjAgOEwxMiAxM0w0IDhWNkwx%0D%0AMiAxMUwyMCA2VjhaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjYiLz4KPC9zdmc+Cg==); 
+		position: relative;
+		
+		&:hover { cursor: pointer; }
+	}
+
+	.snackbar {
+		@include body2;
+		background-color: var(--color--surface);
+		border-radius: 6px;
+		bottom: 150%;
+		display: none;
+		left: 0;
+		min-width: 380px;
+		padding: 16px 24px;
+		position: absolute;
+
+		&.active {
+			display: block;
+			-webkit-animation: scaleup .3s cubic-bezier(.4, 0, .2, 1); /* Safari, Chrome and Opera > 12.1 */
+			   -moz-animation: scaleup .3s cubic-bezier(.4, 0, .2, 1); /* Firefox < 16 */
+				-ms-animation: scaleup .3s cubic-bezier(.4, 0, .2, 1); /* Internet Explorer */
+				 -o-animation: scaleup .3s cubic-bezier(.4, 0, .2, 1); /* Opera < 12.1 */
+					animation: scaleup .3s cubic-bezier(.4, 0, .2, 1);
+		}
+	}
+} // footer
 
 .chip {
 	@include body2;
@@ -351,7 +375,7 @@ footer {
 	    -ms-flex-align: center;
 	        align-items: center;
 	border-radius: 32px;
-	color: $color--high-emphasis;
+	color: var(--color--high-emphasis);
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -363,7 +387,7 @@ footer {
 	white-space: nowrap;
 
 	&.read-more {
-		border: 1px solid $color--high-emphasis;
+		border: 1px solid var(--color--low-emphasis);
 
 		svg {
 			margin-right: 8px;
@@ -373,74 +397,9 @@ footer {
 	}
 
 	&:hover {
-		background-color: $color--surface;
+		background-color: var(--color--surface);
 	}
 }
-
-@keyframes fadein {
-    from {
-		opacity: 0;
-		transform: translate3d(0, 50px, 0);
-	}
-    to   { 
-		opacity: 1;
-		transform: translateZ(0);
-		transform: initial;
-	}
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from {
-		opacity: 0;
-		transform: translate3d(0, 50px, 0);
-	}
-    to   { 
-		opacity: 1;
-		transform: translateZ(0);
-		transform: initial;
-	}
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from {
-		opacity: 0;
-		transform: translate3d(0, 50px, 0);
-	}
-    to   { 
-		opacity: 1;
-		transform: translateZ(0);
-		transform: initial;
-	}
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from {
-		opacity: 0;
-		transform: translate3d(0, 50px, 0);
-	}
-    to   { 
-		opacity: 1;
-		transform: translateZ(0);
-		transform: initial;
-	}
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-    from {
-		opacity: 0;
-		transform: translate3d(0, 50px, 0);
-	}
-    to   { 
-		opacity: 1;
-		transform: translateZ(0);
-		transform: initial;
-	}
-}
-
 
 // *************************** Media Queries
 
@@ -493,7 +452,7 @@ footer {
 	&.home p { margin-bottom: 0; }
 	
 	&.about .container__image img {
-		border: 2px solid $color--high-emphasis;
+		border: 2px solid var(--color--high-emphasis);
 		border-radius: 6px;
 	}
   }

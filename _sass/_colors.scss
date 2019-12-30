@@ -1,16 +1,69 @@
-$color--workforce: #F18965;
-$color--tracker: #39C3D9;
-$color--explorer: #85CA85;
-$color--bgmapp: #77ECDA;
-$color--klask: #A575D7;
-$color--yellow: #CAC785;
-$color--white: #FFFFFF;
+:root {
+    --color--workforce: #F18965;
+    --color--tracker: #39C3D9;
+    --color--explorer: #85CA85;
+    --color--bgmapp: #77ECDA;
+    --color--klask: #A575D7;
+    --color--yellow: #CAC785;
 
-$color--high-emphasis: rgba(255, 255, 255, .87);
-$color--medium-emphasis: rgba(255, 255, 255, .6);
-$color--low-emphasis: rgba(255, 255, 255, 0.2);
+    --color--high-emphasis: rgba(255, 255, 255, .87);
+    --color--medium-emphasis: rgba(255, 255, 255, .6);
+    --color--low-emphasis: rgba(255, 255, 255, .2);
 
-$color--text-on-base: rgba(0, 0, 0, .7);
+    --color--text-on-base: rgba(0, 0, 0, .7);
+    --color--white: #FFFFFF;
 
-$color--background: rgb(5, 5, 5);
-$color--surface: rgba(255, 255, 255, .08);
+    --color--background: rgb(5, 5, 5);
+    --color--surface: rgba(255, 255, 255, .08);
+    --color--separator: rgba(255, 255, 255, .2);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color--workforce: #F18965;
+        --color--tracker: #39C3D9;
+        --color--explorer: #85CA85;
+        --color--bgmapp: #77ECDA;
+        --color--klask: #A575D7;
+        --color--yellow: #CAC785;
+    
+        --color--high-emphasis: rgba(255, 255, 255, .87);
+        --color--medium-emphasis: rgba(255, 255, 255, .6);
+        --color--low-emphasis: rgba(255, 255, 255, .2);
+    
+        --color--background: rgb(5, 5, 5);
+        --color--surface: rgba(255, 255, 255, .08);
+        --color--separator: rgba(255, 255, 255, .2);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color--workforce: #AD3216;
+        --color--tracker: #009B98;
+        --color--explorer: #288835;
+        --color--bgmapp: #46AB91;
+        --color--klask: #A575D7;
+        --color--yellow: #8E8B3E;
+    
+        --color--high-emphasis: rgba(0, 0, 0, .87);
+        --color--medium-emphasis: rgba(0, 0, 0, .6);
+        --color--low-emphasis: rgba(0, 0, 0, .2);
+    
+        --color--background: rgb(239, 240, 245);
+        --color--surface: rgba(0, 0, 0, .05);
+        --color--separator: rgba(0, 0, 0, .12);
+    }
+}
+
+.fill-workforce { fill: var(--color--workforce); }
+.workforce { color: var(--color--workforce); }
+.fill-tracker { fill: var(--color--tracker); }
+.tracker { color: var(--color--tracker); }
+.fill-explorer { fill: var(--color--explorer); }
+.explorer { color: var(--color--explorer); }
+.fill-bgmapp { fill: var(--color--bgmapp); }
+.bgmapp { color: var(--color--bgmapp); }
+.fill-klask { fill: var(--color--klask); }
+.klask { color: var(--color--klask); }
+.talk1 { color: var(--color--yellow); }
