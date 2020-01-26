@@ -47,9 +47,11 @@ Explorer set a baseline precedent for how our field apps should look and feel. W
 ## Challenges
 At face value, Tracker is a simple product that solves a simple problem. Though, as software development goes, nothing is ever as easy as it seems.
 
-* **Battery optimization.** Tracker needs to be able to run in the foreground and background all day with minimal battery impact.
-* **Privacy and transparency.** Being tracked is inherently weird and can be somewhat concerning, at least initially. How might we empower the user to feel confident about when Tracker is running, when it's not, and when it will next?
-* **Tracker isn't where work happens.** Our users might have other apps or tools for this purpose. How might we design an experience for minimal use?
+<ul class="list-item__spacing">
+    <li><strong>Battery optimization.</strong> Tracker needs to be able to run in the foreground and background all day with minimal battery impact.</li>
+    <li><strong>Privacy and transparency.</strong> Being tracked is inherently weird and can be somewhat concerning, at least initially. How might we empower the user to feel confident about when Tracker is running, when it's not, and when it will next?</li>
+    <li><strong>Tracker isn't where work happens.</strong> Our users might have other apps or tools for this purpose. How might we design an experience for minimal use?</li>
+</ul>
 </section>
 
 ***
